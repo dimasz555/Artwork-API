@@ -1,0 +1,22 @@
+runtime: nodejs
+env: flex
+
+automatic_scaling:
+  target_cpu_utilization: 0.65
+  target_throughput_utilization: 0.65
+  min_instances: 1
+  max_instances: 10
+
+handlers:
+- url: /.*
+  script: auto
+  secure: always
+
+env_variables:
+  NODE_ENV: 'production'
+  PORT=8080
+  DATABASE_URL="postgresql://postgres:dbge2GgcGBb5gC4C4-25gC311*b4-C*6@monorail.proxy.rlwy.net:32851/railway"
+  JWT_KEY="secret_key"
+  IMAGEKIT_PUBLIC_KEY="public_SQuj9BTuhSbIX6V997DSKYmiB6E="
+  IMAGEKIT_SECRET_KEY="private_5jFuTfVtIwYZ/kdBo+/2/exYnto="
+  IMAGEKIT_URL_ENDPOINT="https://ik.imagekit.io/uy6buvfss"
